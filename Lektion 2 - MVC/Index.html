@@ -1,0 +1,36 @@
+﻿<!-- 
+    Module
+    Controller
+    Dependency injection
+    Init models in controller
+    Bind functions to scope
+-->
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>MVC demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+</head>
+<body>
+    <main ng-controller="mainCtrl">
+        <h1 ng-bind="title"></h1>
+
+        <button type="button" ng-click="toggleList()">Toggle list</button>
+        <div ng-show="showList" ng-repeat="product in products track by $index">
+            <h2 ng-bind="product.name"></h2>
+            <p ng-bind="product.description"></p>
+        </div>
+    </main>
+
+    <!-- 3rd party libs -->
+    <script src="Scripts/angular.js"></script>
+
+    <!-- Angular apps -->
+    <script src="Scripts/Apps/app.js"></script>
+
+    <!-- Angular controllers -->
+    <script src="Scripts/Controllers/mainCtrl.js"></script>
+</body>
+</html>
