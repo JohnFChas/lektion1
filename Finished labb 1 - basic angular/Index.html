@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html ng-app ng-init="showLetter=false">
+<head >
+    <title>Labb 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <main>
+        <form action="#" style="display: inline-block">
+            <fieldset>
+                <legend>My Form</legend>
+                <table>
+                    <tr>
+                        <td><label for="first-name">First name: </label></td>
+                        <td>
+                            <input id="first-name" type="text" ng-model="formData.firstName" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="last-name">Last name: </label></td>
+                        <td>
+                            <input id="last-name" type="text" ng-model="formData.lastName" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="age">Age: </label></td>
+                        <td>
+                            <input id="age" type="number" ng-model="formData.age" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="has-pets">Do you have pets?</label></td>
+                        <td>
+                            <input type="checkbox" id="has-pets" ng-model="formData.hasPets" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gender: </td>
+                        <td>
+                            <input type="radio" id="male" name="gender" value="male" ng-model="formData.gender" /> <label for="male">Male</label><br />
+                            <input type="radio" id="female" name="gender" value="female" ng-model="formData.gender" /> <label for="female">Female</label><br />
+                            <input type="radio" id="helicopter" name="gender" value="attack helicopter" ng-model="formData.gender" /> <label for="helicopter">Attack helicopter</label>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" ng-click="showLetter = true">Show letter</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+        <span ng-show="showLetter">
+            <p>Hello! My name is {{formData.firstName}} {{formData.lastName}}, I am a {{formData.age}} year old {{formData.gender}}. <span ng-show="formData.hasPets">I have pets</span></p>
+        </span>
+    </main>
+
+    <script src="Scripts/angular.js"></script>
+</body>
+</html>
