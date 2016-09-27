@@ -1,21 +1,17 @@
-﻿<!-- 
-    ng-app
-    directives (förklara)
-    ng-model
-    ng-bind
-    ng-init
-    ng-click
-    expressions (förklara)
- -->
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app>
 <head>
-    <title>Basic angular</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic AngularJS</title>
 	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<body>
-    
+<body ng-init="name = 'John Fristedt'; showText = false">
+    <main>
+        <input type="text" ng-model="name" />
+        <button type="button" ng-click="showText = !showText">Toggle text</button>
+        <p ng-show="showText" ng-bind="name"></p>
+    </main>
+
+    <script src="Scripts/angular.js"></script>
 </body>
 </html>
