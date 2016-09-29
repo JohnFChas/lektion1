@@ -6,6 +6,10 @@ app.controller("mainCtrl", [
     function ($scope) { // <-- This function is where the magic happens
         $scope.title = "My webshop";
         $scope.showList = true;
+        $scope.newProduct = {
+            name: "",
+            description: ""
+        };
 
         $scope.products = [
             {
@@ -28,7 +32,15 @@ app.controller("mainCtrl", [
                 name: "Product 5",
                 description: "Product 5 description"
             },
+            {
+                name: "Product 6",
+                description: "Product 6 description"
+            },
         ];
+
+        $scope.addProduct = function () {
+            $scope.products.push($scope.newProduct);
+        }
 
         $scope.toggleList = function () {
             $scope.showList = !$scope.showList;

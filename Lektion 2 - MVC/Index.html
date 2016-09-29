@@ -17,6 +17,16 @@
     <main ng-controller="mainCtrl">
         <h1 ng-bind="title"></h1>
 
+        <form ng-submit="addProduct()">
+            <input type="text"
+                   placeholder="Product name..."
+                   ng-model="newProduct.name" /><br />
+            <input type="text"
+                   placeholder="Product description..."
+                   ng-model="newProduct.description" /><br />
+            <button type="submit">Add product</button><br />
+        </form>
+
         <button type="button" ng-click="toggleList()">Toggle list</button>
         <div ng-show="showList" ng-repeat="product in products track by $index">
             <h2 ng-bind="product.name"></h2>
@@ -31,6 +41,6 @@
     <script src="Scripts/Apps/app.js"></script>
 
     <!-- Angular controllers -->
-    <script src="Scripts/Controllers/mainCtrl.js"></script>
+    <script src="Scripts/mainCtrl.js"></script>
 </body>
 </html>
